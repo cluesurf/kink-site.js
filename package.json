@@ -1,0 +1,57 @@
+{
+  "name": "@termsurf/kink-site",
+  "type": "module",
+  "version": "0.0.4",
+  "license": "MIT",
+  "main": "./make/index.js",
+  "files": [
+    "./make/index.js",
+    "./make/index.js.map",
+    "./make/index.d.ts",
+    "./make/kink.js",
+    "./make/kink.js.map",
+    "./make/kink.d.ts"
+  ],
+  "scripts": {
+    "make": "tsc && tsc-alias",
+    "scan": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
+    "lint": "eslint --ext .ts ./make",
+    "lint:tool": "npm run lint -- --fix",
+    "test": "node make/test.js",
+    "host": "pnpm make && npm publish --access=public"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@types/lodash": "^4.14.194",
+    "@types/node": "^18.11.17",
+    "@types/prettier": "^2.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "chokidar": "^3.5.3",
+    "concurrently": "^7.6.0",
+    "cross-fetch": "^3.1.6",
+    "email-validator": "^2.0.4",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^24.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-sort-exports": "^0.8.0",
+    "eslint-plugin-sort-keys": "^2.3.5",
+    "kysely": "^0.24.2",
+    "prettier": "^2.8.1",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.2",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@termsurf/kink": "^0.1.6",
+    "@termsurf/kink-text": "^0.0.4",
+    "zod": "^3.22.4"
+  }
+}
