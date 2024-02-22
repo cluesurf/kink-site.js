@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.1.6
     version: 0.1.6
   '@termsurf/kink-text':
-    specifier: ^0.0.6
-    version: 0.0.6
+    specifier: ^0.0.10
+    version: 0.0.10
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -737,8 +737,8 @@ packages:
       tslib: 2.6.0
     dev: true
 
-  /@termsurf/kink-text@0.0.6:
-    resolution: {integrity: sha512-uaS9v0GvnjMRNYsLnZFtx80tbT8bcTN2+ard/64g5tLqlpdRlzSvCbNIWNQwENveLYCtYi7faT2TX7lJKuEivg==}
+  /@termsurf/kink-text@0.0.10:
+    resolution: {integrity: sha512-668HDeEwPLNJIuXmbmImPuaRLE/nA2yqcLe/irdMpce/PCxq5pgjQvhenuEql/TVn64MQUJ8FI5qbL82Cvft1g==}
     dependencies:
       '@cspotcode/source-map': 0.8.0
       '@termsurf/kink': 0.1.6
