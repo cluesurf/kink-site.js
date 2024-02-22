@@ -1,7 +1,7 @@
 {
   "name": "@termsurf/kink-site",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "license": "MIT",
   "main": "./make/index.js",
   "files": [
@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@termsurf/kink": "^0.1.6",
-    "@termsurf/kink-text": "^0.0.4",
+    "@termsurf/kink-text": "^0.0.6",
     "zod": "^3.22.4"
   }
 }
