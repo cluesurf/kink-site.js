@@ -26,6 +26,7 @@ type Base = {
     take: BaseZodError & {
       need: string
       have: string
+      link: Array<string>
     }
   }
   form_link_fail: {

@@ -1,7 +1,7 @@
 import Kink, { KinkList } from '@termsurf/kink'
 import { z } from 'zod'
 import _ from 'lodash'
-import kink, { host } from './kink'
+import kink, { host } from './kink.js'
 import { makeKinkText } from '@termsurf/kink-text'
 
 export function isZodError<I>(
@@ -19,9 +19,26 @@ export function loadZodErrorJSON(error: z.ZodError) {
       // ZodInvalidTypeIssue | ZodInvalidLiteralIssue | ZodUnrecognizedKeysIssue | ZodInvalidUnionIssue | ZodInvalidUnionDiscriminatorIssue | ZodInvalidEnumValueIssue | ZodInvalidArgumentsIssue | ZodInvalidReturnTypeIssue | ZodInvalidDateIssue | ZodInvalidStringIssue | ZodTooSmallIssue | ZodTooBigIssue | ZodInvalidIntersectionTypesIssue | ZodNotMultipleOfIssue | ZodNotFiniteIssue | ZodCustomIssue;
       switch (error.code) {
         case z.ZodIssueCode.invalid_type:
-          return kink('form_fail', undefined, 406)
+          return kink(
+            'form_fail',
+            {
+              link: error.path.map(String),
+              need: error.expected,
+              have: error.received,
+              message: error.message,
+            },
+            406,
+          )
         case z.ZodIssueCode.unrecognized_keys:
-          return kink('form_link_fail', undefined, 406)
+          return kink(
+            'form_link_fail',
+            {
+              link: error.path,
+              list: error.keys,
+              message: error.message,
+            },
+            406,
+          )
         default: {
           const kink = new Kink({
             form: 'z.ZodError',
